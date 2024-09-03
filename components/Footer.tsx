@@ -19,9 +19,9 @@ const MyFooter: React.FC = () => {
               src="/images/logo.svg"
               alt="Takeda Shingen Security Logo"
               name="Takeda Shingen Security"
-            />
+            /> 
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:mt-4 sm:grid-cols-3 sm:gap-6">
+          <div className="grid grid-cols-1 gap-8 sm:mt-4 sm:grid-cols-2 sm:gap-6">
             <div>
               <Footer.Title title="Về chúng tôi" />
               <Footer.LinkGroup col={true}>
@@ -31,23 +31,18 @@ const MyFooter: React.FC = () => {
                 <Footer.Link href="/tuyen-dung">Tuyển dụng</Footer.Link>
               </Footer.LinkGroup>
             </div>
-            <div>
-              <Footer.Title title="Theo dõi" />
-              <Footer.LinkGroup col={true}>
-                {/* Thêm các liên kết mạng xã hội của bạn */}
-              </Footer.LinkGroup>
-            </div>
+            
             <div>
               <Footer.Title title="Liên hệ" />
               <Footer.LinkGroup col={true}>
                 <Footer.Link href="#">
-                  <p>Địa chỉ: 123 Đường ABC, Quận XYZ, Thành phố ...</p>
+                  <p>Khu Thắng Lợi, Thị trấn Hương Canh, Huyện Bình Xuyên, Tỉnh Vĩnh Phúc</p>
                 </Footer.Link>
                 <Footer.Link href="#">
-                  <p>Email: contact@example.com</p>
+                  <p>Email: contact@dichvubaovetakedashingen.vn</p>
                 </Footer.Link>
                 <Footer.Link href="#">
-                  <p>Điện thoại: 0123 456 789</p>
+                  <p>Điện thoại: **** 456 789</p>
                 </Footer.Link>
               </Footer.LinkGroup>
             </div>
@@ -56,12 +51,13 @@ const MyFooter: React.FC = () => {
         <Footer.Divider />
         <div className="w-full sm:flex sm:items-center sm:justify-between">
           <Footer.Copyright href="#" by="Takeda Shingen™" year={2023} />
-          <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
+          <div>Thiết kế bởi <a target='_blank' href='https://longwebstudio.net/'>Long Web Studio</a></div>
+          {/* <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
             <Footer.Icon href="#" icon={BsFacebook} />
             <Footer.Icon href="#" icon={BsInstagram} />
             <Footer.Icon href="#" icon={BsTwitter} />
-            {/* ...Thêm các biểu tượng mạng xã hội khác */}
-          </div>
+      
+          </div> */}
         </div>
       </div>
     </Footer>
