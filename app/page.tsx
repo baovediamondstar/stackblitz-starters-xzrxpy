@@ -1,10 +1,8 @@
 // app/page.tsx
 import { fetchAPI } from '@/lib/graphql';
-import PageContent from '@/components/PageContent';
 import { Button } from 'flowbite-react';
 import Link from 'next/link';
-import { GetPageBySlugData, ImageNode } from '@/lib/types';
-import { GET_PAGE_BY_SLUG } from '@/components/queries/GetPageBySlug.graphql';
+import { GET_PAGE_BY_SLUG, GetPageBySlugData } from '@/components/queries/GetPageBySlug.graphql';
 import Image from 'next/image';
 import { imageLoader } from '@/lib/image-loader';
 
@@ -12,8 +10,7 @@ export default async function Home() {
   const data = await fetchAPI<GetPageBySlugData>(GET_PAGE_BY_SLUG, {
     slug: '/',
   });
-  const featuredImage: ImageNode | undefined = data.page?.featuredImage;
-  console.log(featuredImage);
+
   return (
     <div>
       {/* Phần banner hoặc hình ảnh */}
@@ -25,12 +22,14 @@ export default async function Home() {
           <p className="text-lg mb-6">
             Cung cấp dịch vụ bảo vệ chuyên nghiệp và an toàn
           </p>
-          {featuredImage && (
+          {data.page?.featuredImage && (
             <Image
               loader={imageLoader}
-              src={featuredImage.sourceUrl}
+              src={data.page.featuredImage.node.sourceUrl}
               alt="Banner Takeda Shingen Security"
               className="w-full h-64 object-cover rounded-lg shadow-md"
+              width={data.page.featuredImage.node.mediaDetails.width}
+              height={data.page.featuredImage.node.mediaDetails.height}
             />
           )}
         </div>
@@ -38,7 +37,11 @@ export default async function Home() {
 
       {/* Phần giới thiệu ngắn gọn và dịch vụ nổi bật */}
       <section className="container mx-auto py-12">
-        {data.page && <PageContent page={data.page} />}
+        {/* {data.page && <PageContent page={data.page} />} */}
+        {data.page && <div
+          className="prose lg:prose-xl" // Sử dụng class prose từ Tailwind CSS để định dạng nội dung
+          dangerouslySetInnerHTML={{ __html: data.page.content }}
+        />}
       </section>
 
       {/* Lời kêu gọi hành động */}

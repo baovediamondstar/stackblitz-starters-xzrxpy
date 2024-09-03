@@ -1,5 +1,4 @@
 // components/queries/GetPageBySlug.graphql.ts
-import { Page } from '@/lib/types';
 
 export const GET_PAGE_BY_SLUG = `
   query GetPageBySlug($slug: ID!) {
@@ -23,5 +22,20 @@ export const GET_PAGE_BY_SLUG = `
 `;
 
 export interface GetPageBySlugData {
-  page: Page | null;
+  page: {
+    id: string;
+    title: string;
+    content: string;
+    slug: string;
+    featuredImage?: { // Hình ảnh nổi bật có thể không tồn tại
+      node: {
+        sourceUrl: string;
+        altText?: string; // altText có thể không bắt buộc
+        mediaDetails: {
+          width?: number;
+          height?: number;
+        };
+      };
+    };
+  } | null; // Cho phép page là null trong trường hợp không tìm thấy trang
 }
