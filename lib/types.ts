@@ -3,10 +3,10 @@
 // Kiểu dữ liệu cho hình ảnh
 export interface ImageNode {
   sourceUrl: string;
-  altText?: string;
-  mediaDetails?: {
-    width?: number;
-    height?: number;
+  altText: string;
+  mediaDetails: {
+    width: number;
+    height: number;
   };
 }
 
@@ -16,7 +16,9 @@ export interface Page {
   title: string;
   content: string;
   slug: string;
-  featuredImage?: ImageNode;
+  featuredImage?: {
+    node: ImageNode
+  };
 }
 
 // Kiểu dữ liệu cho kết quả truy vấn GetPageBySlug
