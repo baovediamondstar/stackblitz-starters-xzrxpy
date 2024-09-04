@@ -3,6 +3,7 @@ import './globals.css';
 import { Roboto } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 const roboto = Roboto({
   weight: ['300', '400', '500'],
@@ -28,6 +29,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <GoogleAnalytics />
       </body>
     </html>
   );
