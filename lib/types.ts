@@ -10,6 +10,12 @@ export interface ImageNode {
   };
 }
 
+export interface SEO {
+
+  fullHead: string
+
+}
+
 // Kiểu dữ liệu cho trang
 export interface Page {
   id: string;
@@ -19,6 +25,7 @@ export interface Page {
   featuredImage?: {
     node: ImageNode
   };
+  seo: SEO
 }
 
 // Kiểu dữ liệu cho kết quả truy vấn GetPageBySlug

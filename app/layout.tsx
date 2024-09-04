@@ -11,11 +11,6 @@ const roboto = Roboto({
   display: 'swap',
 });
 
-export const metadata = {
-  title: 'Takeda Shingen Security',
-  description: 'Cung cấp dịch vụ bảo vệ chuyên nghiệp và an toàn',
-};
-
 export const revalidate = 3600*2 // invalidate every 2 hour
 
 export default function RootLayout({

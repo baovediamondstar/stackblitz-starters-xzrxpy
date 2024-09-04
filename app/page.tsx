@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { GET_PAGE_BY_SLUG, GetPageBySlugData } from '@/components/queries/GetPageBySlug.graphql';
 import Image from 'next/image';
 import { imageLoader } from '@/lib/image-loader';
+import parse from "html-react-parser";
 
 export default async function Home() {
   const data = await fetchAPI<GetPageBySlugData>(GET_PAGE_BY_SLUG, {
@@ -13,6 +14,7 @@ export default async function Home() {
 
   return (
     <div>
+      {data.page && parse(data.page.seo.fullHead)}
       {/* Phần banner hoặc hình ảnh */}
       <section className="bg-gray-100 py-12">
         <div className="container mx-auto text-center">

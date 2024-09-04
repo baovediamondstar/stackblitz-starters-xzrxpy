@@ -1,6 +1,7 @@
 import { imageLoader } from '@/lib/image-loader';
 import { Page } from '@/lib/types';
 import Image from 'next/image';
+import parse from "html-react-parser";
 
 interface PageContentProps {
   page: Page;
@@ -9,6 +10,7 @@ interface PageContentProps {
 export default function PageContent({ page }: PageContentProps) {
   return (
     <div>
+      {parse(page.seo.fullHead)}
       <h1 className="text-3xl font-bold mb-4">{page.title}</h1>{' '}
       {/* Thêm class cho tiêu đề */}
       {page.featuredImage && (
