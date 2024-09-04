@@ -18,7 +18,7 @@ const MyFooter: React.FC = () => {
               href="/"
               src="/images/logo.svg"
               alt="Takeda Shingen Security Logo"
-              name="Takeda Shingen Security"
+              name="Takeda Shingen"
             /> 
           </div>
           <div className="grid grid-cols-1 gap-8 sm:mt-4 sm:grid-cols-2 sm:gap-6">

@@ -14,11 +14,11 @@ const Header: React.FC = () => {
           alt="Logo Takeda Shingen"
         />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-          Takeda Shingen Security
+          Takeda Shingen
         </span>
       </Navbar.Brand>
       <div className="flex md:order-2">
-        <Button color="purple" className="rounded-full">
+        <Button color="primary" className="rounded-full">
           <Link href="/lien-he">Liên hệ ngay</Link>
         </Button>
         <Navbar.Toggle />

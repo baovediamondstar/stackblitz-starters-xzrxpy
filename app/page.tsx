@@ -18,7 +18,7 @@ export default async function Home() {
       {/* Phần banner hoặc hình ảnh */}
       <section className="bg-gray-100 py-12">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl font-bold mb-4">
+          <h1 className="text-4xl font-bold mb-4 text-primary">
             Chào mừng đến với Takeda Shingen Security
           </h1>
           <p className="text-lg mb-6">
@@ -53,8 +53,8 @@ export default async function Home() {
           <p className="text-lg mb-6">
             Hãy liên hệ với chúng tôi ngay hôm nay để được tư vấn miễn phí.
           </p>
-          <Button color="light">
-            <Link href="/lien-he">Liên hệ ngay</Link>
+          <Button as={Link} href="/lien-he" color="light">
+            Liên hệ ngay
           </Button>
         </div>
       </section>
